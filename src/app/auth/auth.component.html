@@ -1,0 +1,16 @@
+<app-menu></app-menu>
+<div class="container">
+  <form>
+    <mat-form-field>
+      <input matInput placeholder="Логин" #filter>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input matInput type="password" placeholder="Пароль" #filter>
+    </mat-form-field>
+    <br>
+    <br>
+    <button type="submit" mat-raised-button color="primary" (click)="userLogin()" *ngIf="!loginStatus">Войти</button>
+    <button type="submit" mat-raised-button color="warn" (click)="userLogout()" *ngIf="loginStatus">Выйти</button>
+  </form>
+</div>

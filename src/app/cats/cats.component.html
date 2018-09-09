@@ -1,0 +1,21 @@
+<app-menu></app-menu>
+<div class="container">
+  <form>
+    <mat-form-field>
+      <input matInput placeholder="Поиск" #filter>
+    </mat-form-field>
+  </form>
+  <mat-divider></mat-divider>
+  <br>
+
+  <mat-expansion-panel *ngFor="let c of cats | filter:'name':filter.value">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ c.name + ', ' }} {{ c.age | age }}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <p [appGenderColor]=c.gender>Пол: {{ c.gender | gender}}</p>
+    <p>Порода: {{ c.type }}</p>
+  </mat-expansion-panel>
+</div>
